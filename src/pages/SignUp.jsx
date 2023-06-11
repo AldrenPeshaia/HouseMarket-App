@@ -7,6 +7,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { db } from "../firebase.config";
+import OAuth from "../components/OAuth";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
@@ -55,7 +56,7 @@ function SignUp() {
 
       navigate("/");
     } catch (error) {
-      toast.error("Something Went wrong with registration");
+      toast.error("Something went wrong with registration");
     }
   };
 
@@ -110,7 +111,7 @@ function SignUp() {
               </button>
             </div>
           </form>
-          {/* Google OAuth */}
+          <OAuth />
 
           <Link to="/sign-in" className="registerLink">
             Sign In Instead
